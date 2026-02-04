@@ -18,7 +18,6 @@ sites:
     maxResponseTime: 3000
 
 status-website:
-  cname: status.freshfishcameroun.com
   logoUrl: https://freshfishcameroun.com/logo.png
   name: Fresh Fish Cameroon Status
   introTitle: "Statut des Services ODOO de FRESH FISH CAMEROUN"
