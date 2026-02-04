@@ -1,36 +1,106 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Official repository: https://github.com/Steeven-Duncan-First/upptime
+
+owner: Steeven-Duncan-First
+repo: upptime
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: Odoo Fresh Firsh Production
+    url: https://odoo.freshfishcameroun.com
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 301
+      - 302
+
+  - name: Odoo Fresh Fish API
+    url: https://odoo.freshfishcameroun.com/web/database/selector
+    maxResponseTime: 3000
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  # Page de statut public
+  cname: status.freshfishcameroun.com
+  logoUrl: https://freshfishcameroun.com/logo.png
+  name: Fresh Fish Cameroon Status
+  introTitle: "Statut des Services ODOO de FRESH FISH CAMEROUN"
+  introMessage: Surveillance en temps réel de nos infrastructures
   navbar:
     - title: Status
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Configuration des vérifications
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"  # Vérification toutes les 5 minutes
+
+# Notifications
+notifications:
+  # Webhook vers Make
+  - type: custom
+    name: Make Webhook
+    check: "all"
+    body: |
+      {
+        "site": "$SITE_NAME",
+        "url": "$SITE_URL",
+        "status": "$SITE_STATUS",
+        "statusCode": "$RESPONSE_CODE",
+        "responseTime": "$RESPONSE_TIME",
+        "timestamp": "$TIMESTAMP",
+        "message": "$SITE_STATUS_MESSAGE"
+      }
+    headers:
+      Content-Type: application/json
+    method: POST
+    url: https://hook.eu1.make.com/injscwc69oe6ktqcgl5o2p1g66m5t04t
+
+# Assignees pour les issues GitHub
+assignees:
+  - Steeven-Duncan-First
+
+user-agent: upptime-lfcompany
+
+# Langue
+i18n:
+  footer: Propulsé par [Upptime](https://upptime.js.org)
+  liveStatus: Statut en direct
+  overallUptime: Disponibilité globale
+  overallUptimeTitle: Disponibilité globale
+  averageResponseTime: Temps de réponse moyen
+  averageResponseTimeTitle: Temps de réponse moyen
+  sevelDayResponseTime: Temps de réponse (7j)
+  responseTimeMs: Temps de réponse (ms)
+  up: Opérationnel
+  down: Hors service
+  degraded: Dégradé
+  ms: ms
+  loading: Chargement
+  navGitHub: GitHub
+  footer: Upptime Fresh Fish Cameroun
+  rateLimitExceededTitle: Limite de débit dépassée
+  rateLimitExceededIntro: Trop de requêtes
+  rateLimitExceededWhatDoesThisMean: Que signifie cela ?
+  rateLimitExceededErrorHelpText: Attendez quelques minutes et réessayez
+  errorTitle: Une erreur s'est produite
+  errorIntro: Une erreur s'est produite lors de la récupération des données
+  errorText: Veuillez réessayer plus tard
+  errorHome: Retour à l'accueil
+  pastIncidents: Incidents passés
+  activeIncidents: Incidents actifs
+  incidentDetails: Détails de l'incident
+  incidentFixed: Résolu
+  incidentOngoing: En cours
+  incidentOpenedAt: Ouvert le
+  incidentClosedAt: Fermé le
+  incidentViewOnGitHub: Voir sur GitHub
+  incidentCommentSummary: Publié le $DATE par $AUTHOR
+  incidentBack: ← Retour à tous les incidents
+  pastIncidentsResolved: Résolu en $MINUTES minutes avec $POSTS publications
+  liveStatusHtmlComment: "<!-- Statut en direct -->"
