@@ -23,7 +23,7 @@ With [Upptime](https://upptime.js.org), you can get your own unlimited and free 
 
 <!--end: status pages-->
 
-[**Visit our status website →**](https://status.freshfishcameroun.com)
+[**Visit our status website →**](https://steeven-duncan-first.github.io/upptime))
 
 ## 📄 License
 
