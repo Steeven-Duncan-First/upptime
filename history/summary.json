@@ -4,10 +4,10 @@
     "url": "https://odoo.freshfishcameroun.com",
     "icon": "https://icons.duckduckgo.com/ip3/odoo.freshfishcameroun.com.ico",
     "slug": "odoo-fresh-fish-production",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.96%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 862,
@@ -15,14 +15,16 @@
     "timeWeek": 736,
     "timeMonth": 862,
     "timeYear": 862,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-03-02": 1
+    }
   },
   {
     "name": "Odoo Fresh Fish API",
     "url": "https://odoo.freshfishcameroun.com/web/database/selector",
     "icon": "https://icons.duckduckgo.com/ip3/odoo.freshfishcameroun.com.ico",
     "slug": "odoo-fresh-fish-api",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -33,6 +35,8 @@
     "timeWeek": 468,
     "timeMonth": 518,
     "timeYear": 518,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-03-02": 0
+    }
   }
 ]
